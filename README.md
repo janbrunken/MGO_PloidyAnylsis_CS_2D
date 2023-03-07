@@ -17,6 +17,6 @@ To perform 2D segmentation, maximum intensity projections are recommended. Ploid
 
 ## Installation
 
-bash
+```bash
 git clone https://github.com/janbrunken/PloidyAnalysis_2D.git
 ```
