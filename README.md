@@ -8,7 +8,7 @@ This repository contains the PloidyAnalysis_2D python package as well as Juypter
   4. Ploidy analysis (filtering out cycling cells, ploidy determination, cell type filtering)
 
 ## Image requirements
-The cells to be analyzed should be stained against the following markers:
+Cells to be analyzed should be stained against the following markers:
   - Nuclear labeling reflecting DNA content (e.g. DAPI, HOECHST)
   - Cell cycle marker (e.g. Geminin)
   - Cell type marker of interest (e.g. Cytokeratin 8 for luminal mammary gland cells)
