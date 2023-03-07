@@ -17,6 +17,21 @@ To perform 2D segmentation, maximum intensity projections are recommended. Ploid
 
 ## Installation
 
+It is recommended to create a new virtual environment using conda.
+
+```bash
+conda create -n PloidyAnalysis_2D python=3.8
+```
+
+Activate the new environment.
+
+```bash
+conda activate PloidyAnalysis_2D
+```
+Clone this git repo and pip install the package.
+
 ```bash
 git clone https://github.com/janbrunken/PloidyAnalysis_2D.git
+cd PloidyAnalysis_2D
+pip instsall -e .
 ```
