@@ -36,6 +36,28 @@ Clone this git repo and pip install the package.
 
 ```
 git clone https://github.com/janbrunken/PloidyAnalysis_2D.git
+```
+
+Move into the cloned repo folder.
+
+```
 cd PloidyAnalysis_2D
+```
+
+Pip install the PloidyAnalysis_2D package.
+
+```
 pip instsall -e .
+```
+
+To use the Jupyter notbooks, it is recommended to install the ipykernel.
+
+```
+conda install ipykernel
+```
+
+Add the new environment to Jupyter.
+
+```
+python -m ipykernel install --user --name=PloidyAnalysis_2D
 ```
