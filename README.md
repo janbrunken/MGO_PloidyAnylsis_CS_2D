@@ -32,7 +32,7 @@ Activate the new environment.
 conda activate PloidyAnalysis_2D
 ```
 
-Clone this git repo and pip install the package.
+Clone this git repo.
 
 ```
 git clone https://github.com/janbrunken/PloidyAnalysis_2D.git
