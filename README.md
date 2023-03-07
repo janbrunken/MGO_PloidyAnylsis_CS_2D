@@ -15,3 +15,7 @@ Cells to be analyzed should be stained against the following markers:
 
 To perform 2D segmentation, maximum intensity projections are recommended. Ploidy measurements should be performed on sum intensity projections.
 
+## Installation
+
+'''bash
+git clone 
