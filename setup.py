@@ -7,7 +7,7 @@ setup(
     author="Jan Brunken",
     author_email="j.brunken@dkfz-heidelberg.de",
     description='Analyze ploidy from 2D image data.',
-    packages=find_packages(),
+    packages=['PloidyAnalysis_2D'],
     install_requires=[
         'numpy',
         'pandas',
@@ -17,7 +17,7 @@ setup(
         'seaborn',
         'nbformat',
         'plotly',
-        'tensorflow-cpu',
+        'tensorflow',
         'stardist',
         'cellpose',
         'tifffile',
