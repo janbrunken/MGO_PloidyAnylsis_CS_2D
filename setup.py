@@ -17,7 +17,7 @@ setup(
         'seaborn',
         'nbformat',
         'plotly',
-        'tensorflow',
+        'tensorflow-cpu',
         'stardist',
         'cellpose',
         'tifffile',
