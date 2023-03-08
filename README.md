@@ -50,7 +50,7 @@ Pip install the PloidyAnalysis_2D package.
 pip instsall -e .
 ```
 
-To use the Jupyter notbooks, it is recommended to install the ipykernel.
+To use the Jupyter notebooks, it is recommended to install the ipykernel.
 
 ```
 conda install ipykernel
