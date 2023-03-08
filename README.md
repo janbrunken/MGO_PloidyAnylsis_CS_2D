@@ -47,7 +47,7 @@ cd PloidyAnalysis_2D
 Pip install the PloidyAnalysis_2D package.
 
 ```
-pip instsall -e .
+pip install -e .
 ```
 
 To use the Jupyter notebooks, it is recommended to install the ipykernel.
