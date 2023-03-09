@@ -58,17 +58,17 @@ def process_data(data, mark, cc):
 
     df['nuc_median_intensity_bgCorr'] = df['nuc_median_intensity']-df.iloc[0]['nuc_median_intensity'] #calculate CTCF
     df['nuc_CTCF'] = df['nuc_integrated_density']-df['nuc_area']*df.iloc[0]['nuc_median_intensity'] #calculate CTCF
-    df['nuc_CTCF_n'] = df['nuc_CTCF']/1000000 #calculate normalized CTCF
+    df['nuc_CTCF_n'] = df['nuc_CTCF']/df['nuc_CTCF'].median() #calculate normalized CTCF
     df["nuc_volume"] = 4/3*np.pi*np.power(np.sqrt(df["nuc_area"]/np.pi), 3) #calculate nuclear volume
 
     df[f'{mark}_median_intensity_bgCorr'] = df[f'{mark}_median_intensity']-df.iloc[0][f'{mark}_median_intensity'] #calculate CTCF
     df[f'{mark}_CTCF'] = df[f'{mark}_integrated_density']-df[f'{mark}_area']*df.iloc[0][f'{mark}_median_intensity'] #calculate CTCF
-    df[f'{mark}_CTCF_n'] = df[f'{mark}_CTCF']/1000000 #calculate normalized CTCF
+    df[f'{mark}_CTCF_n'] = df[f'{mark}_CTCF']/df[f'{mark}_CTCF'].median() #calculate normalized CTCF
     df[f"{mark}_volume"] = 4/3*np.pi*np.power(np.sqrt(df[f"{mark}_area"]/np.pi), 3) #calculate nuclear volume
 
     df[f'{cc}_median_intensity_bgCorr'] = df[f'{cc}_median_intensity']-df.iloc[0][f'{cc}_median_intensity'] #calculate CTCF
     df[f'{cc}_CTCF'] = df[f'{cc}_integrated_density']-df['nuc_area']*df.iloc[0][f'{cc}_median_intensity'] #calculate CTCF
-    df[f'{cc}_CTCF_n'] = df[f'{cc}_CTCF']/1000000 #calculate normalized CTCF
+    df[f'{cc}_CTCF_n'] = df[f'{cc}_CTCF']/df[f'{cc}_CTCF'].median() #calculate normalized CTCF
 
     df.drop(df.head(1).index,inplace=True) #remove background line
     return df
