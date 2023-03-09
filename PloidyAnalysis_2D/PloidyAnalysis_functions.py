@@ -151,7 +151,7 @@ def interactive_overlay(image_files, labels_files, series, mark, cc, data, label
         hoverinfo = ''
 
         if color_mode=="cell_cycle":
-            properties = ['label','series', "nuc_CTCF_n", "nuc_median_intensity_bgCorr", "nuc_volume", f'{mark}_CTCF_n', f'{mark}_median_intensity_bgCorr', f'{mark}_volume', f'{cc}_CTCF_n', f'{cc}_median_intensity_bgCorr', 'cell_cycle']
+            properties = ['label','series', "nuc_CTCF_n", "nuc_median_intensity_bgCorr_n", "nuc_volume", f'{mark}_CTCF_n', f'{mark}_median_intensity_bgCorr_n', f'{mark}_volume', f'{cc}_CTCF_n', f'{cc}_median_intensity_bgCorr_n', 'cell_cycle']
 
             if data[(data["label"]==label_i) & (data["series"]==series)]["cell_cycle"].values[0]=="no_cell":
                 c="yellow"
@@ -168,7 +168,7 @@ def interactive_overlay(image_files, labels_files, series, mark, cc, data, label
 
         elif color_mode=="ploidy":
 
-            properties = ['label','series', "nuc_CTCF_n", "nuc_median_intensity_bgCorr", "nuc_volume", f'{mark}_CTCF_n', f'{mark}_median_intensity_bgCorr', f'{mark}_volume', f'{cc}_CTCF_n', f'{cc}_median_intensity_bgCorr', 'cell_cycle', 'ploidy']
+            properties = ['label','series', "nuc_CTCF_n", "nuc_median_intensity_bgCorr_n", "nuc_volume", f'{mark}_CTCF_n', f'{mark}_median_intensity_bgCorr_n', f'{mark}_volume', f'{cc}_CTCF_n', f'{cc}_median_intensity_bgCorr_n', 'cell_cycle', 'ploidy']
 
             if data[(data["label"]==label_i) & (data["series"]==series)]["ploidy"].values[0]=="NA":
                 c="yellow"
@@ -184,7 +184,7 @@ def interactive_overlay(image_files, labels_files, series, mark, cc, data, label
 
         elif color_mode=="cell_type":
 
-            properties = ['label','series', "nuc_CTCF_n", "nuc_median_intensity_bgCorr", "nuc_volume", f'{mark}_CTCF_n', f'{mark}_median_intensity_bgCorr', f'{mark}_volume', f'{cc}_CTCF_n', f'{cc}_median_intensity_bgCorr', 'cell_cycle', 'ploidy', 'cell_type']
+            properties = ['label','series', "nuc_CTCF_n", "nuc_median_intensity_bgCorr_n", "nuc_volume", f'{mark}_CTCF_n', f'{mark}_median_intensity_bgCorr_n', f'{mark}_volume', f'{cc}_CTCF_n', f'{cc}_median_intensity_bgCorr_n', 'cell_cycle', 'ploidy', 'cell_type']
 
             if data[(data["label"]==label_i) & (data["series"]==series)]["cell_type"].values[0]==f"{mark}_positive":
                 c="magenta"
@@ -197,7 +197,7 @@ def interactive_overlay(image_files, labels_files, series, mark, cc, data, label
                 hovertemplate=hoverinfo, hoveron='points+fills'))
         else:
 
-            properties = ['label','series', "nuc_CTCF_n", "nuc_median_intensity_bgCorr", "nuc_volume", f'{mark}_CTCF_n', f'{mark}_median_intensity_bgCorr', f'{mark}_volume', f'{cc}_CTCF_n', f'{cc}_median_intensity_bgCorr']
+            properties = ['label','series', "nuc_CTCF_n", "nuc_median_intensity_bgCorr_n", "nuc_volume", f'{mark}_CTCF_n', f'{mark}_median_intensity_bgCorr_n', f'{mark}_volume', f'{cc}_CTCF_n', f'{cc}_median_intensity_bgCorr_n']
 
             for prop_name in properties:
                 hoverinfo += f'<b>{prop_name}: {s_processed_data[prop_name][i]}</b><br>'
