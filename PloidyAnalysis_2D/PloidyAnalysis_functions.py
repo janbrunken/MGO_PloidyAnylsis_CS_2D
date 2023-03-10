@@ -1,5 +1,6 @@
 import numpy as np
 from skimage import io, measure, color
+from skimage.measure import perimeter
 import matplotlib.pyplot as plt
 import pandas as pd
 import os
@@ -24,10 +25,11 @@ def measure_properties(nuc_image, mark_image, cc_image, nuc_label, mark_label, m
         mark_label_pixels = mark_image[mark_mask]
         cc_label_pixels = cc_image[nuc_mask]
 
-        # Calculate median intensity, integrated density, and area
+        # Calculate median intensity, integrated density, area and perimeter
         nuc_median_intensity = np.median(nuc_label_pixels)
         nuc_integrated_density = np.sum(nuc_label_pixels)
         nuc_area = np.count_nonzero(nuc_mask)
+        nuc_perimeter = perimeter(nuc_mask, neighborhood=0) 
 
         mark_median_intensity = np.median(mark_label_pixels)
         mark_integrated_density = np.sum(mark_label_pixels)
@@ -41,6 +43,7 @@ def measure_properties(nuc_image, mark_image, cc_image, nuc_label, mark_label, m
             'nuc_median_intensity': nuc_median_intensity,
             'nuc_integrated_density': nuc_integrated_density,
             'nuc_area': nuc_area,
+            'nuc_perimeter': nuc_perimeter,
             f'{mark}_median_intensity': mark_median_intensity,
             f'{mark}_integrated_density': mark_integrated_density,
             f'{mark}_area': mark_area,
@@ -59,6 +62,7 @@ def process_data(data, mark, cc):
     df['nuc_median_intensity_bgCorr'] = df['nuc_median_intensity']-df.iloc[0]['nuc_median_intensity'] #calculate median intensity
     df['nuc_CTCF'] = df['nuc_integrated_density']-df['nuc_area']*df.iloc[0]['nuc_median_intensity'] #calculate CTCF
     df["nuc_volume"] = 4/3*np.pi*np.power(np.sqrt(df["nuc_area"]/np.pi), 3) #calculate nuclear volume
+    df['nuc_circularity'] = 4*np.pi*df['nuc_area']/np.power(df['nuc_perimeter'], 2)
 
 
     df[f'{mark}_median_intensity_bgCorr'] = df[f'{mark}_median_intensity']-df.iloc[0][f'{mark}_median_intensity'] #calculate median intensity
