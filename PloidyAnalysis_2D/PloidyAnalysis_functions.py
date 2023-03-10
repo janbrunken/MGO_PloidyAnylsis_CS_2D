@@ -29,7 +29,7 @@ def measure_properties(nuc_image, mark_image, cc_image, nuc_label, mark_label, m
         nuc_median_intensity = np.median(nuc_label_pixels)
         nuc_integrated_density = np.sum(nuc_label_pixels)
         nuc_area = np.count_nonzero(nuc_mask)
-        nuc_perimeter = perimeter(nuc_mask, neighborhood=0) 
+        nuc_perimeter = perimeter(nuc_mask, neighborhood=4) 
 
         mark_median_intensity = np.median(mark_label_pixels)
         mark_integrated_density = np.sum(mark_label_pixels)
