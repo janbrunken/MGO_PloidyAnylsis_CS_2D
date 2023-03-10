@@ -3,7 +3,7 @@ from skimage import io
 from natsort import os_sorted
 import glob
 import os
-from tqdm.auto import tqdm
+from tqdm import tqdm
 
 def match_labels(nuc_label_img, mark_label_img):
     """
