@@ -69,7 +69,7 @@ def remove_unmatched_nuc(nuc_matched_label_img, mark_matched_label_img):
     mark_ul = np.unique(mark_matched_label_img)
     for ul in nuc_ul:
         if not ul in mark_ul:
-            nuc_mask = (nuc_label_img == ul)
+            nuc_mask = (nuc_matched_label_img == ul)
             nuc_matched_label_img[nuc_mask]=0
     return nuc_matched_label_img
 
